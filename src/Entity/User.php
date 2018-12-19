@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User
+class User implements User
 {
     /**
      * @ORM\Id()
@@ -77,13 +77,29 @@ class User
         return $this;
     }
 
-    
     function getPassword() {
         return $this->password;
     }
 
     function setPassword($password) {
         $this->password = $password;
+    }
+
+
+    public function serialize(){
+        return serialize(array(
+            $this->id,
+            $this->mail,
+            $this->password
+        ));
+    }
+   
+    public function unserialize($serialized){
+        list(
+            $this->id,
+            $this->mail,
+            $this->password
+                ) = unserialize($serialized, array('allowed_classes' => false));
     }
 
 }

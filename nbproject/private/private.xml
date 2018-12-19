@@ -3,11 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/alexandre.petitjean/Desktop/alexandre/www/tp_symfony/templates/registration/register.html.twig</file>
             <file>file:/C:/Users/alexandre.petitjean/Desktop/alexandre/www/tp_symfony/src/Entity/User.php</file>
+            <file>file:/C:/Users/alexandre.petitjean/Desktop/alexandre/www/tp_symfony/public/index.php</file>
             <file>file:/C:/Users/alexandre.petitjean/Desktop/alexandre/www/tp_symfony/src/Form/UserType.php</file>
+            <file>file:/C:/Users/alexandre.petitjean/Desktop/alexandre/www/tp_symfony/templates/user.html.twig</file>
             <file>file:/C:/Users/alexandre.petitjean/Desktop/alexandre/www/tp_symfony/src/Controller/LoginController.php</file>
-            <file>file:/C:/Users/alexandre.petitjean/Desktop/alexandre/www/tp_symfony/templates/registration/registration.html.twig</file>
             <file>file:/C:/Users/alexandre.petitjean/Desktop/alexandre/www/tp_symfony/src/Controller/RegistrationController.php</file>
+            <file>file:/C:/Users/alexandre.petitjean/Desktop/alexandre/www/tp_symfony/templates/navbar.html.twig</file>
+            <file>file:/C:/Users/alexandre.petitjean/Desktop/alexandre/www/tp_symfony/templates/base.html.twig</file>
         </group>
     </open-files>
 </project-private>
