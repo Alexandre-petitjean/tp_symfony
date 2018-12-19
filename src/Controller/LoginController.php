@@ -9,26 +9,20 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class LoginController extends AbstractController {
 
     /**
      * @Route("/login", name="login")
      */
-    public function index(Request $request) {
-        $formLogin = $this->createFormLogin();
-        $formLogin->handleRequest($request);
-        if ($formLogin->isSubmitted() && $formLogin->isValid()) {
-            $mail = $formLogin['mailAddress']->getData();
-            $password = $formLogin['password']->getData();
-            $user = $this->fetchUser($mail, $password);
-            return $this->render('user.html.twig',
-                            array('user' => $user)
-            );
-        }
-        return $this->render('login/index.html.twig',
-                        array('formLogin' => $formLogin->createView())
-        );
+    public function index(AuthenticationUtils $AuthenticationUtils) {
+       $error = $AuthenticationUtils->getLastAuthenticationError();
+       $lastUsername = $AuthenticationUtils->getLastUsername();
+        return $this->render('login/index.html.twig', array(
+            'last_username' => $lastUsername,
+            'error' => $error
+        ));
     }
 
     private function createFormLogin() {
